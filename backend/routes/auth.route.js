@@ -1,9 +1,6 @@
 import express from 'express';
 const router = express.Router();
-
-router.post('/signup', (req, res) => {
-    res.send('Signup Endpoint');
-});
+import { signup } from '../src/controllers/auth.controller.js';
 
 router.post('/login', (req, res) => {
     res.send('Login Endpoint');
@@ -12,5 +9,7 @@ router.post('/login', (req, res) => {
 router.post('/logout', (req, res) => {
     res.send('Logout Endpoint');
 });
+
+router.post('/signup',signup);
 
 export default router;
